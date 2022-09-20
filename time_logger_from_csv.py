@@ -16,16 +16,15 @@ with open("./times.csv", 'r') as file:
   csvreader = csv.reader(file, delimiter=';')
   for row in csvreader:
     dateTime = row[0]
-    durationInMin = row[1]
-    desc = row[2]
-    taskId = row[3]
+    durationHours = row[1]
+    durationMins = row[2]
+    desc = row[3]
+    taskId = row[4]
 
-    duration = int(durationInMin) * 60 * 1000
+    duration = (int(durationHours) * 60 + int(durationMins)) * 60 * 1000
 
     date_time = datetime.datetime.strptime(dateTime, "%Y-%m-%d %H:%M:%S")
     unixTime = int(time.mktime(date_time.timetuple()) * 1000)
-
-    print(taskId, dateTime, durationInMin, desc)
 
     values = {
         "description": desc,

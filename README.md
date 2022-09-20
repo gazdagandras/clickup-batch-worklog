@@ -1,4 +1,4 @@
-# API Time Logger for ClickUp
+# ClickUp Batch Worklog
 
 Save time log entries into ClickUp, read data from CSV file.
 
@@ -32,7 +32,8 @@ The script reads data from times.csv file. Copy the ```times.csv.example``` file
 * The separator is ;
 * Columns:
   * Start time (Date and time) in the following format: 2022-06-29 9:00:00
-  * Duration in minutes
+  * Duration hours
+  * Duration minutes
   * Description
   * Task ID (Check the URL or task's details page)
   * Unused fields: you can write here additional informations about task, if the Task ID is confusing
